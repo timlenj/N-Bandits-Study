@@ -32,7 +32,7 @@ We run through the algorithm, using Incremental Implementation to update the pro
 This read to me as a mix between Reinforcement Comparison and Epsilon Greedy. Like RC, we use Incremental Implementation to calculate the probabilities of selecting each state (although the example in the book has us calculating the probabilities in a more direct manner than the book's example for RC). Like Epsilon Greedy, we must keep track of our Action Value estimates in our Q vector.
 ** Components **
 * **Selection Probabilities**
-* **Q(a)**
+* **Q:** Action Value Estimate vector
 * **Action Value Estimate Method**
 * **Parameters**: Beta as the learning parameter
 
