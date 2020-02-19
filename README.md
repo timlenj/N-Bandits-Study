@@ -1,6 +1,6 @@
 # Analyzing Evaluative Feedback concepts in the Sutton RL Text
 
-In the Sutton and Barto RL book, the authors outline several algorithms to tackle the N Armed Bandit Problem. You can think of the N Armed Bandit as an MDP or MRP with a single state and N actions. If MDP, MRP or Markov sound like alien to you; you can imagine the "N Armed Bandit" as a slot machine with N arms. Each arm you pull generates a reward. You do not know the reward for pulling each arm.
+In the Sutton and Barto RL book, the authors outline several algorithms to tackle the N Armed Bandit Problem. You can think of the N Armed Bandit as an MDP or MRP with a single state and N actions. If MDP, MRP or Markov sound like alien to you; you can imagine the "N Armed Bandit" as a slot machine with N arms. Each arm you pull generates a reward. You do not know the reward for pulling each arm until you pull it.
 
 I assumed that the rewards are stationary, meaning the reward each arm gives you is deterministic (if you pull the first arm multiple times, you will always get the same reward). I did this because laziness mostly :). Although I did set up the algorithms to handle stochastic action values.
 
@@ -9,7 +9,7 @@ Below are several of the algorithms outlined in the book.
 ## Epsilon Greedy
 **Components**
 * **Q**: Action-Value Vector. This vector holds the **estimate** of the reward for action a. It is important to remember that these are estimates. As such, each element in the vector is defined as a function. In my algorithms I use a simple average of the rewards for the action. Also important to note, in the case where rewards are stationary, this does not matter as the estimate is the true value.
-* **Epsilon**: This is the probability that you "explore". 1 - epsilon is the probability that you greedily select the max Action Value from Q.
+* **Epsilon**: This is the probability that you "explore". 1 - epsilon is the probability that you greedily select the max Action Value Estimate from Q.
 * **Exploration Method**: This isn't explicity defined in the book, however once your program decides to explore (by selecting a random value less than or equal to epsilon), you have to define how it will explore. The text describes too methods, first is to create a univariate distribution from Q and select from there. That is, each element in Q has (1 / len(Q)) probability of being selection. The second is using a Boltzmann distribution, which is a parameterized distribution which can then be converted to uniform, a simple weighted average to a "max value favored" weighted average based on the parameter values you select. It is called the Boltzmann distribution and is pretty cool and useful, I recommend reading up on it. I did not know of this distribution before reading the book.
 * **Action Value Estimate Method**: As mentioned above, Q(a) is an estimate and we need a function to define the estimate. The book uses the average reward for each time we selected the action, but one can get more creative.
 
