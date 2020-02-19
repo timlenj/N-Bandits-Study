@@ -6,3 +6,5 @@
 
 ##Reinforcement Comparison
 *My results conclude that reinforcement comparison using Boltzmann requires more data and creative parameterization to compete with Epsilon Greedy in this problem given the size of the action vector
+
+
