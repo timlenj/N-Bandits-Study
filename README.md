@@ -24,6 +24,7 @@ Updated Value = Old Value + parameter(New Value - Old Value)
 Back to the components.
 * **Selection Probabilities**: The probability of selecting an action. This is updated as we go along to favor large values. In the book, we use a version of the Boltzmann distribution where the parameter = 1.
 * **Reference Reward**: This is the number we use to judge the reward we receive. Think of it as a baseline we use to determine if a reward is good or bad.
+* **Preference Function**: A different kind of value function. In Epsilon Greedy, we used used the Estimated Action Values as the preference function. In RC, the preference function is its own thing and updated using Incremental Implementation (instead of the Action Value Estimate Method)
 * **Parameters**: Alpha and beta, the learning rate/step rate/whatever you want to call it. This is what the number that multiply our "error" with before we add it with the old estimate. Large numbers means we learn faster, but our estimates can oscillate around the true value, small numbers means we can get closer to the true value, but learn slower. This is why it is often convenient to use a convergent function as the parameter. 
 
 We run through the algorithm, using Incremental Implementation to update the probabilities of selecting each action and the reference reward.
