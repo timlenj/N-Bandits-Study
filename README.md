@@ -15,6 +15,7 @@ Below are several of the algorithms outlined in the book.
 
 ## Reinforcement Comparison
 **Components**
+
 Okay, before we even get into these next two algorithms, you have to understand a concept called "Incremental Implementation." A simple (probably oversimplified) explanation is that it is just a method to update existing values. You have a value that is an estimate, you draw a new value to update that estimate (this new value is called the target), then you update that estimate using a portion of the delta between the new and old value.
 
 Updated Value = Old Value + parameter(New Value - Old Value)
@@ -30,6 +31,7 @@ We run through the algorithm, using Incremental Implementation to update the pro
 
 ## Pursuit
 This read to me as a mix between Reinforcement Comparison and Epsilon Greedy. Like RC, we use Incremental Implementation to calculate the probabilities of selecting each state (although the example in the book has us calculating the probabilities in a more direct manner than the book's example for RC). Like Epsilon Greedy, we must keep track of our Action Value estimates in our Q vector.
+
 **Components**
 * **Selection Probabilities**
 * **Q:** Action Value Estimate vector
