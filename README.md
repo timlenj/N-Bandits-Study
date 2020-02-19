@@ -42,6 +42,8 @@ This algorithm is simple. You start with the probability distribution of selecti
 ## Testing
 Below are some results from tests I ran for myself. You can view the results in the notebook. I assumed stationary rewards. Rewards were generated using numpy normal distribution generator with mean at 1 and standard deviation = 3 (so not normal at all). I wanted increased variability to challenge the algorithms. In the future, I will combine these methods to create my own algorithms.
 
+I ran through 10 epsiodes with a 1000 step horizon and averaged the results. In the graphs F(y) is the average of the selected values as of x=t divided by the max value in the rewards vector. I did this instead of displaying the actual reward at time x=t. When I tried the latter, the graphs were extremely jagged (due to exploration). 
+
 ### Epsilon Greedy (temperature = .5, epsilon = .1)
 * Uniform selection tends to outperform Softmax w/ Boltzmann when using non-optimistic initialization 
 * Softmax w/ Boltzmann tends to outperform uniform when using optimistic initialization of the action value vector
